@@ -1,0 +1,2613 @@
+<!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" > <![endif]--><!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" >        <![endif]--><!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" >               <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Jamie Juviler">
+    <meta name="description" content="Learn the fundamentals of REST APIs and why they're one of the most widely-used technologies on the web.">
+    <meta name="generator" content="HubSpot">
+    <meta class="swiftype" name="doc-type" data-type="string" content="Customer">
+    <meta class="swiftype" name="meta-description" data-type="text" content="Learn the fundamentals of REST APIs and why they're one of the most widely-used technologies on the web.">
+    <meta class="swiftype" name="last-updated" data-type="date" content="2021-05-28">
+    
+    <script src="//cdn-3.convertexperiments.com/js/10031559-1003891.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+    <script type="application/ld+json" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+    {
+      "@context": "https://schema.org",
+      "@id": "https://blog.hubspot.com/website/what-is-rest-api#article",
+      "@type": "NewsArticle",
+      "headline": "REST APIs: How They Work and What You Need to Know",
+      "image": [
+        "https://f.hubspotusercontent00.net/hubfs/53/Google%20Drive%20Integration/REST%20APIs%20How%20They%20Work%20and%20Why%20You%20Should%20Use%20Them.jpeg"
+       ],
+      "datePublished": "2020-07-27T11:00:00+0000",
+      "dateModified": "2021-05-28T21:27:18+0000"
+    }
+    </script>
+  
+    
+        
+    
+	  
+  
+    
+		  <title>REST APIs: How They Work and What You Need to Know</title>
+	  
+    <!-- exclude_hsg -->
+    <link rel="shortcut icon" href="https://blog.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png">
+	  
+	    
+    <script src="/hs/hsstatic/jquery-libs/static-1.1/jquery/jquery-1.7.1.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+<script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">hsjQuery = window['jQuery'];</script>
+    <meta property="og:description" content="Learn the fundamentals of REST APIs and why they're one of the most widely-used technologies on the web.">
+    <meta property="og:title" content="REST APIs: How They Work and What You Need to Know">
+    <meta name="twitter:description" content="Learn the fundamentals of REST APIs and why they're one of the most widely-used technologies on the web.">
+    <meta name="twitter:title" content="REST APIs: How They Work and What You Need to Know">
+
+    
+
+    
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://blog.hubspot.com/wt-assets/static-files/2811/core-nav/styles.css">
+    
+
+    
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Domain Settings Code -->
+<meta name="apple-itunes-app" content="app-id=587068814">
+<meta name="twitter:app:name:iphone" content="HubSpot">
+<meta name="twitter:app:id:iphone" content="534167981">
+<meta name="twitter:app:name:ipad" content="Inbound Marketing">
+<meta name="twitter:app:id:ipad" content="587068814">
+<meta name="p:domain_verify" content="7f4fa0f1fccc171fd4d5af64f062521c">
+<meta http-equiv="”content-language”" content="”en-US”">
+
+<meta name="google-site-verification" content="2IEWx1p87YR79mLbeeSi-osUja8cJtEvdo_CvCgzMtc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- isQA:   -->
+
+
+
+
+
+
+<meta name="theme-color" content="#FF7A59">
+<meta name="twitter:card" content="summary_large_image">
+
+
+
+<!-- GDPR:  blog.hubspot.com | GTM-T7FPMN | build #(SizeLimitingPyMap: {hsg=2811, legacy=4948}) -->
+
+
+  
+  
+    <script src="https://blog.hubspot.com/wt-assets/static-files/compliance/index.js" type="text/javascript" data-gtm-id="GTM-T7FPMN" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+  
+
+
+<!-- is_legacy_page: false -->
+<!-- exclude_globals: true -->
+
+
+
+
+
+
+
+
+  
+
+     
+    
+      <link href="https://blog.hubspot.com/wt-assets/static-files/2811/blog-rebuild/styles.css" rel="stylesheet" type="text/css">
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HREFLANG MACRO -->
+
+
+  
+
+
+
+
+<!-- Social Sharing -->
+    
+    
+    
+
+    
+    <!-- End -->
+
+
+      
+      
+      
+
+      
+     
+
+      
+      
+        
+          
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    
+
+<!--Meta tag for Facebook Instant Articles-->
+<meta property="fb:pages" content="6039999393">
+<meta property="og:image" content="https://blog.hubspot.com/hubfs/Google%20Drive%20Integration/REST%20APIs%20How%20They%20Work%20and%20Why%20You%20Should%20Use%20Them.jpeg#keepProtocol">
+<meta property="og:image:width" content="598">
+<meta property="og:image:height" content="398">
+<meta property="og:image:alt" content="two people using a computer to learn about REST APIs">
+<meta name="twitter:image" content="https://blog.hubspot.com/hubfs/Google%20Drive%20Integration/REST%20APIs%20How%20They%20Work%20and%20Why%20You%20Should%20Use%20Them.jpeg#keepProtocol">
+<meta name="twitter:image:alt" content="two people using a computer to learn about REST APIs">
+
+<meta property="og:url" content="https://blog.hubspot.com/website/what-is-rest-api">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@WebsiteJamie">
+
+<link rel="canonical" href="https://blog.hubspot.com/website/what-is-rest-api">
+
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" href="https://blog.hubspot.com/website/rss.xml">
+<meta name="twitter:domain" content="blog.hubspot.com">
+<script src="//platform.linkedin.com/in.js" type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+    lang: en_US
+</script>
+
+<meta http-equiv="content-language" content="en">
+
+<link rel="stylesheet" href="https://blog.hubspot.com/hs-fs/hub/53/hub_generated/template_assets/2218656526/1593536734982/Custom/page/css/Hubspot-default-no-style.min.css">
+
+
+
+    
+	
+    
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  
+	    
+	  <!-- AMP Analytics -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+    <script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+	
+    
+        
+    
+    
+    
+        
+        
+        
+        <meta name="twitter:label1" value="Reading time">
+        <meta name="twitter:data1" value="8 min read">
+        
+    
+             
+    
+      
+      
+      
+      
+        
+        
+      
+    
+            
+    
+
+    
+    
+    <link href="//static2cdn.hubspot.com/hubspot.com/static-1.4334/_hsg-ss/build/icons/hsg-icons.css" rel="stylesheet">
+    <style type="text/css">
+             .hide {
+             display: none;
+             }
+             </style>
+    <script type="application/ld+json" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is a REST API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Now for our definition. REST is a set of guidelines that software can use to communicate over the internet in order to make integrations simple and scalable. A REST API (also called a “RESTful” API) is a specific type of API that follows these guidelines.</p>
+<p>REST stands for <strong>Representational State Transfer</strong>. This means that when a client requests a resource using a REST API, the server transfers back the current state of the resource in a standardized representation.</p>
+<p>In other words, REST APIs work by fielding requests for a resource and returning all relevant information about the resource, translated into a format that clients can easily interpret (this format is determined by the API receiving requests). Clients can also modify items on the server and even add new items to the server through a REST API.</p>"
+        }
+      }, {
+        "@type": "Question",
+        "name": "Why use REST APIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Basically, it’s an excellent system for web apps. Here are the main benefits to this type of API:</p>
+            <ul>
+              <li><strong>REST APIs are flexible.</strong> They can handle many types of requests and send data in many different formats.</li>
+              <li><strong>REST APIs are scalable.</strong> They are designed for communication between any two pieces of software, regardless of size or capability. As a web application grows and adds more resources, its REST API will be able to quickly handle the increasing amount and variety of requests.</li>
+              <li><strong>REST APIs incorporate existing web technologies</strong>, making them relatively easy to build and use. To request a resource via a REST API, you just need to provide its URL.</li>
+            </ul>"
+        }
+      }, {
+        "@type": "Question",
+        "name": "How to use a REST API",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "<p>Web applications with publicly available APIs will have documentation available on the “developers” section of their websites. Here you’ll find instructions on how to access and use the API in conjunction with your own software. If the API is built with REST principles, the documentation will probably indicate this.</p>
+<p>Many APIs require an API key to use. An API key is a unique string of characters that an API provider gives to a developer to authorize access to their API. API keys are often sent with client requests to identify the client to the server. Keep your API key(s) private.</p>"
+        }
+      }]
+    }
+    </script>
+<!-- Closing Head Tag -->  
+</head>
+<body class="wt-blog wt-blog__subpages   hs-content-id-32807263294 hs-blog-post hs-content-path-website-what-is-rest-api hs-content-name-rest-apis-how-they-work-and-what-you-need-to-know hs-blog-name-website hs-blog-id-9901938527 hs-blog-lang-en" style="">
+    <div class="header-container-wrapper">
+        <div class="header-container container-fluid">
+            <div class="row-fluid-wrapper row-depth-1 row-number-1">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+                        <div class="" data-global-widget-path="generated_global_groups/4062488779.html"><div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-cell " style="" data-widget-type="cell" data-x="0" data-w="12">
+
+<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_jinja " style="" data-widget-type="raw_jinja" data-x="0" data-w="12">
+
+<!-- new header:   --><!-- Primary Site International Header -->
+
+
+
+
+
+
+
+<!-- absolute https://blog.hubspot.com/website/what-is-rest-api -->
+<!-- isPreview false -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--?xml version="1.0" encoding="utf-8"?--> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><symbol viewbox="0 0 25 25" id="crm" xmlns="http://www.w3.org/2000/svg"><defs><path id="ba" d="M0 0h25v25H0z" /></defs><g fill="none" fill-rule="evenodd"><path d="M16.827 12.5a4.327 4.327 0 10-8.653 0 4.327 4.327 0 008.653 0" fill="#FF7A59" /><g><mask id="bb" fill="#fff"><use xlink:href="#ba" /></mask><path d="M12.5 21.048A8.548 8.548 0 013.952 12.5a8.548 8.548 0 1117.096 0 8.548 8.548 0 01-8.548 8.548M12.5 0C5.597 0 0 5.596 0 12.5 0 19.403 5.597 25 12.5 25S25 19.403 25 12.5C25 5.596 19.403 0 12.5 0" fill="#33475B" /></g></g></symbol><symbol viewbox="0 0 25 25" id="marketing" xmlns="http://www.w3.org/2000/svg"><defs><path id="ca" d="M0 0h24.777v25H0z" /><path id="cc" d="M.389 0h12.33v16.36H.39z" /></defs><g fill="none" fill-rule="evenodd"><g><mask id="cb" fill="#fff"><use xlink:href="#ca" /></mask><path d="M20.393 15.763c-1.32 3.19-4.51 5.413-8.207 5.28-4.246-.153-7.843-3.563-8.202-7.797a8.544 8.544 0 016.363-9.01.882.882 0 00.205-.08l3.939-2.171c.848-.47.602-1.744-.36-1.875a12.169 12.169 0 00-3.1-.021C4.866.835.056 6.177 0 12.387-.061 19.343 5.559 25 12.5 25c6.084 0 11.142-4.348 12.258-10.106.164-.844-.751-1.49-1.493-1.055l-2.46 1.44a.993.993 0 00-.412.484" fill="#33475B" /></g><g transform="translate(12)"><mask id="cd" fill="#fff"><use xlink:href="#cc" /></mask><path d="M11.963 9.291l-1.7-.508L12.696.636c.127-.424-.309-.786-.69-.574L1.06 6.158c-.382.213-.328.787.085.91l1.701.51-2.436 8.146c-.127.424.31.786.691.573l10.946-6.095c.382-.213.328-.787-.085-.91" fill="#FF7A59" /></g></g></symbol><symbol viewbox="0 0 25 29" id="sales" xmlns="http://www.w3.org/2000/svg"><defs><path id="da" d="M0 .981h25V17.89H0z" /><path id="dc" d="M.043.487h17.055V17H.043z" /></defs><g fill="none" fill-rule="evenodd"><g transform="translate(0 -.981)"><mask id="db" fill="#fff"><use xlink:href="#da" /></mask><path d="M4.09 14.976c-.276-1.514-.165-3.161.604-4.89 1.222-2.743 3.802-4.748 6.786-5.093a8.55 8.55 0 019.569 8.489c0 .574-.164 1.433-.301 2.05a.993.993 0 00.493 1.093c.466.249 1.093.619 1.62 1.044.533.43 1.353.203 1.56-.451.44-1.386.647-2.874.56-4.426C24.628 6.38 19.25 1.15 12.83.986 5.776.805-.001 6.469-.001 13.482c0 1.179.169 2.316.478 3.395.222.78 1.206.999 1.736.387.429-.493.94-.995 1.445-1.291.34-.2.502-.608.432-.997" fill="#33475B" /></g><g transform="translate(4 12.019)"><mask id="dd" fill="#fff"><use xlink:href="#dc" /></mask><path d="M16.282 6.287l-4.652-.876-1.917-4.329a.988.988 0 00-.915-.595.986.986 0 00-.877.521L5.65 5.162l-4.71.485a1 1 0 00-.624 1.681l3.249 3.443-.994 4.628a1.003 1.003 0 00.977 1.213c.14 0 .287-.03.429-.098l4.279-2.027 4.094 2.375a.988.988 0 00.5.138c.568 0 1.077-.495.994-1.13l-.605-4.695 3.524-3.16a1 1 0 00-.482-1.728" fill="#FF7A59" /></g></g></symbol><symbol viewbox="0 0 31 25" id="service" xmlns="http://www.w3.org/2000/svg"><defs><path id="ea" d="M.494.041h23.403V25H.494z" /></defs><g fill="none" fill-rule="evenodd"><g transform="translate(7 -.04)"><mask id="eb" fill="#fff"><use xlink:href="#ea" /></mask><path d="M12.383.042a.492.492 0 00-.467.713 8.27 8.27 0 01.861 2.956c.02.218.174.39.388.435a8.546 8.546 0 016.68 9.688c-.543 3.59-3.422 6.51-7.005 7.097a8.539 8.539 0 01-8.53-3.665.525.525 0 00-.731-.158c-.597.403-1.403.93-2.555.847-.401-.03-.661.407-.462.756 2.194 3.823 6.341 6.38 11.087 6.287 6.511-.128 11.964-5.453 12.238-11.962C24.17 6.224 19 .559 12.383.042" fill="#33475B" /></g><path d="M14.836 1.286a4.342 4.342 0 011.38 2.055c.257.813.295 1.633.112 2.456a4.247 4.247 0 01-1.172 2.135L8.96 14.354a1.02 1.02 0 01-.74.322c-.278 0-.524-.108-.738-.322L1.285 7.965A4.472 4.472 0 01.113 5.797a4.682 4.682 0 01.113-2.456 4.33 4.33 0 011.38-2.055A4.074 4.074 0 013.566.354a4.338 4.338 0 012.152.161 4.552 4.552 0 011.862 1.188l.642.643.642-.643A4.562 4.562 0 0110.726.515a4.333 4.333 0 012.15-.16c.729.128 1.382.44 1.96.931" fill="#FF7A59" /></g></symbol><symbol viewbox="0 0 13 24" id="CaretRight" xmlns="http://www.w3.org/2000/svg"><path d="M12.89 11.439c-.035-.09-.102-.167-.157-.25l-.097-.155c-.014-.022-.023-.048-.043-.068L2.588.466A1.502 1.502 0 00.413 2.535L9.434 12l-9.02 9.466a1.5 1.5 0 102.174 2.069l10.005-10.5c.02-.021.029-.046.043-.07.033-.05.064-.102.097-.153.055-.083.122-.16.158-.25.037-.091.044-.187.062-.282.018-.093.047-.185.047-.28 0-.094-.029-.186-.047-.28-.018-.094-.025-.191-.062-.281" fill="#7C98B6" fill-rule="evenodd" /></symbol><symbol viewbox="0 0 585.44 165.95" id="HSLogo_color" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none}.cls-2{fill:#33475b;clip-path:url(#clip-path)}.cls-3{fill:#ff7a59;clip-path:url(#clip-path-2)}</style><clippath transform="translate(0 0)"><rect class="cls-1" width="585.44" height="165.96" /></clippath><clippath transform="translate(0 0)"><rect class="cls-1" x="376.04" width="156.14" height="163.62" /></clippath></defs><title>Logo - Full (Color)</title><g id="Layer_2"><g class="cls-2"><polygon points="63.4 27.47 63.4 74.28 20.41 74.28 20.41 27.47 0 27.47 0 139.21 20.41 139.21 20.41 93.92 63.4 93.92 63.4 139.21 83.81 139.21 83.81 27.47 63.4 27.47" /><path d="M149.13,103.09a16.88,16.88,0,0,1-33.77,0V55.23H96v47.86a36.21,36.21,0,0,0,72.42,0V55.23H149.13Z" transform="translate(0 0)" /><path d="M292.57,60.16c0-9.81,6.49-12.92,13.6-12.92,5.73,0,13.3,4.36,18.25,9.65L337.1,41.95c-6.33-8.56-19.17-14.48-29.68-14.48-21,0-36.19,12.3-36.19,32.69,0,37.83,46.24,25.83,46.24,47,0,6.53-6.34,12.3-13.6,12.3-11.45,0-15.16-5.6-20.42-11.52l-14.07,14.63c9,11.05,20.1,16.66,33.4,16.66,19.95,0,36-12.45,36-31.91,0-42-46.24-28.95-46.24-47.16" transform="translate(0 0)" /><path d="M578.63,121.36c-11.44,0-14.69-4.95-14.69-12.53V75.28h17.78v-17H563.94V35.85l-19.63,8.81V113c0,17.48,12.06,26.29,28.6,26.29a39.62,39.62,0,0,0,7.74-.62l4.79-17.63c-2.16.15-4.64.3-6.81.3" transform="translate(0 0)" /><path d="M222.82,55.79c-9.59,0-16.28,2.78-22.75,9.13V28.14H180.68V96.31c0,25.52,18.45,43,39.18,43,23,0,43.23-17.79,43.23-41.75,0-23.66-18.62-41.76-40.27-41.76m-.12,64a22,22,0,1,1,22-22,22,22,0,0,1-22,22" transform="translate(0 0)" /><path d="M433.36,96.54c0-24-20.19-41.75-43.23-41.75-20.73,0-39.18,17.48-39.18,43V166h19.39V129.17c6.46,6.34,13.16,9.13,22.74,9.13,21.65,0,40.27-18.09,40.27-41.76M415,96.3a22,22,0,1,1-22-22,22,22,0,0,1,22,22" transform="translate(0 0)" /></g><g class="cls-3"><path d="M496,53.85V34.37a15,15,0,0,0,8.65-13.52v-.45a15,15,0,0,0-15-15h-.45a15,15,0,0,0-15,15v.45a15,15,0,0,0,8.65,13.52V53.85a42.48,42.48,0,0,0-20.2,8.89L409.23,21.13a16.75,16.75,0,0,0,.6-4.21,16.9,16.9,0,1,0-16.92,16.87,16.72,16.72,0,0,0,8.32-2.26l52.61,40.93a42.61,42.61,0,0,0,.65,48l-16,16a13.74,13.74,0,0,0-4-.65,13.88,13.88,0,1,0,13.89,13.89,13.7,13.7,0,0,0-.65-4l15.83-15.83A42.68,42.68,0,1,0,496,53.85m-6.56,64.06A21.9,21.9,0,1,1,511.36,96a21.9,21.9,0,0,1-21.9,21.9" transform="translate(0 0)" /></g></g></symbol><symbol viewbox="0 0 27 28" id="Sprocket" xmlns="http://www.w3.org/2000/svg"><path d="M19.614 20.177c-2.091 0-3.787-1.678-3.787-3.747 0-2.07 1.696-3.747 3.787-3.747 2.092 0 3.787 1.677 3.787 3.747s-1.695 3.747-3.787 3.747m1.134-10.961V5.882c.88-.411 1.495-1.291 1.495-2.313v-.077c0-1.41-1.166-2.563-2.59-2.563h-.078c-1.424 0-2.59 1.153-2.59 2.563v.077c0 1.022.616 1.902 1.495 2.313v3.334c-1.309.2-2.505.734-3.492 1.52L5.74 3.617c.061-.231.104-.47.105-.721C5.845 1.298 4.539.002 2.925 0 1.312-.002.002 1.29 0 2.888-.002 4.485 1.304 5.78 2.918 5.783c.526 0 1.013-.147 1.44-.388l9.097 7.005a7.22 7.22 0 00-1.227 4.03c0 1.56.498 3.004 1.34 4.19L10.8 23.36a2.389 2.389 0 00-.686-.11c-1.326 0-2.4 1.063-2.4 2.375S8.788 28 10.114 28c1.326 0 2.401-1.064 2.401-2.376a2.32 2.32 0 00-.111-.679l2.736-2.708a7.397 7.397 0 004.473 1.502c4.08 0 7.386-3.272 7.386-7.309 0-3.654-2.713-6.673-6.252-7.214" fill="#FF7A59" fill-rule="evenodd" /></symbol><symbol id="hs-icon-globe" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 14.25 19" enable-background="new 0 0 14.25 19" xml:space="preserve"><path id="path-1_1_" fill="currentColor" d="M13.9225,5.2324c0.6133,2.2106,0.3595,4.5326-0.7147,6.5393
+            c-1.0749,2.0067-2.8439,3.4614-4.9806,4.0957c-0.5524,0.1641-1.1122,0.2664-1.672,0.3114v1.5345h2.9005
+            c0.344,0,0.622,0.2882,0.622,0.6434c0,0.3558-0.278,0.6434-0.622,0.6434H2.4107c-0.344,0-0.622-0.2876-0.622-0.6434
+            c0-0.3551,0.278-0.6434,0.622-0.6434h2.9005v-1.546c-1.1818-0.0901-2.3413-0.4285-3.4068-1.0391
+            c-0.3011-0.1718-0.4093-0.5636-0.2432-0.8743c0.1667-0.3108,0.5461-0.4233,0.8453-0.2516c1.6496,0.9458,3.5605,1.1671,5.3774,0.6286
+            c1.8176-0.5398,3.3222-1.7764,4.2354-3.4826c0.9131-1.7062,1.1296-3.6808,0.6077-5.5607c-0.5219-1.8806-1.718-3.4363-3.367-4.3814
+            C9.0596,1.0337,8.9507,0.6425,9.1168,0.3318c0.1667-0.3114,0.5455-0.4227,0.846-0.2516C11.9028,1.192,13.3092,3.0217,13.9225,5.2324
+            z M11.875,7.5208c0,3.2738-2.6635,5.9375-5.9372,5.9375S0,10.7947,0,7.5208s2.6642-5.9375,5.9378-5.9375S11.875,4.247,11.875,7.5208
+            z" /></symbol><symbol viewbox="0 0 27 28" id="cms" xmlns="http://www.w3.org/2000/svg"><defs><path id="aa" d="M.5.18h14.318V13H.5z" /></defs><g fill="none" fill-rule="evenodd"><g transform="translate(12 14.458)"><mask id="ab" fill="#fff"><use xlink:href="#aa" /></mask><path d="M7.555 2.645L1.218.19A.613.613 0 00.5.794v9.102c0 .299.216.554.51.604l6.545 2.492a.66.66 0 00.208 0l6.545-2.492a.613.613 0 00.51-.604V.794A.613.613 0 0014.1.19L7.763 2.645a.605.605 0 01-.208 0" fill="#FF7A59" /></g><path d="M9.318 20.425c-3.462-1.39-5.808-4.973-5.296-9.036.484-3.84 3.635-6.945 7.482-7.38a8.55 8.55 0 019.544 8.491c0 .306-.09.466.127.682.342.34 3.439-1.177 3.439-1.177a.514.514 0 00.329-.517C24.409 4.834 18.68-.352 11.806.02 5.459.362.27 5.624.01 11.976c-.24 5.871 3.576 10.877 8.87 12.477a.496.496 0 00.635-.482c-.006-.965-.013-2.712-.015-3.286a.28.28 0 00-.183-.26" fill="#33475B" /></g></symbol></svg>
+
+
+
+
+  
+  
+
+
+<div id="hsg-nav-global" class="hsg-nav__wrapper ">
+  <div class="hsg-nav__product-nav-bar">
+    <div id="hs-nav-v4" class="nav-width-flex placeholder-nav">
+      <div class="hs-nav-section main-nav"></div>
+    </div>
+  </div>
+
+  <a class="hsg-nav-menu__skip-link" href="#hsg-main-content">
+    Skip to content
+  </a>
+  <nav class="hsg-nav-bar hsg-nav-top-bar">
+  <div class="hsg-page-width-normal">
+    <div class="hsg-nav__inner">
+      
+        
+
+
+
+
+
+<ul role="menu" class="hsg-nav__group">
+  
+  <li class="hsg-nav__group-item hsg-nav__group-item--has-dropdown">
+    <div id="nav-main-link" class="hsg-nav__link-wrapper">
+      <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="Language-submenu" class="hsg-nav__link">
+        <span class="hsg-nav__link-label hsg-nav__link-label--globe"><svg class="hsg-nav__globe-icon"><use xlink:href="#hs-icon-globe" fill="currentColor" /></svg>English</span>
+      </a>
+    </div>
+    <ul role="menu" id="Language-submenu" aria-hidden="true" hidden class="hsg-nav__dropdown-list">
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">日本語</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Deutsch</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">English</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Español</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Português</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Français</a>
+        </li>
+      </ul>
+  </li>
+
+  
+
+
+
+
+
+<li class="hsg-nav__group-item">
+  <div class="hsg-nav__link-wrapper">
+    <a href="//offers.hubspot.com/contact-sales" class="hsg-nav__link homepage-nav-contact-sales">
+          <span class="hsg-nav__link-label hsg-nav__link-label--contact-us">
+            <svg role="presentation" width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M323.963 81c2.124 0 3.852 1.778 3.852 3.964 0 1.905-.56 3.606-1.435 4.719-.661.843-1.502 1.35-2.417 1.35-.908 0-1.742-.5-2.4-1.33-.884-1.114-1.452-2.823-1.452-4.739 0-2.186 1.728-3.964 3.852-3.964zm3.487 9.089a8.438 8.438 0 012.898 2.2c.432.508.422 1.26-.012 1.766-1.545 1.805-3.812 2.945-6.33 2.945-2.547 0-4.836-1.165-6.382-3.004-.41-.488-.376-1.22.037-1.705a8.437 8.437 0 012.836-2.174c.895 1.272 2.118 2.06 3.466 2.06 1.358 0 2.59-.799 3.487-2.088z" id="nav-contact-sales" /></defs><use fill="currentColor" xlink:href="#nav-contact-sales" transform="translate(-317 -81)" fill-rule="evenodd" /></svg>
+            Contact Sales</span>
+        </a>
+      </div>
+    </li>
+
+</ul>
+      
+      <ul class="hsg-nav__group">
+        <li class="hsg-nav__group-item hsg-nav__group-item--search">
+          
+            
+  <!-- pageLang: en -->
+  <input type="search" class="blog-sticky-navigation__search-input" data-id="hsg-nav__search-input" placeholder="search..." data-config="{&quot;contexts&quot;:[{&quot;selected&quot;:false,&quot;id&quot;:&quot;website&quot;,&quot;cx&quot;:&quot;009219321729865762236:z9gsnksfc30&quot;,&quot;label&quot;:&quot;Search HubSpot.com&quot;},{&quot;selected&quot;:true,&quot;id&quot;:&quot;blog&quot;,&quot;cx&quot;:&quot;009219321729865762236:fzizmixjdmi&quot;,&quot;label&quot;:&quot;Search the blog&quot;}],&quot;loadMoreButton&quot;:&quot;Load More Results&quot;,&quot;noResults&quot;:[&quot;That's odd...&quot;,&quot;couldn't find quite the right match.&quot;,&quot;Don't worry, try searching again up top.&quot;]}" aria-label="Search">
+  
+          
+        </li>
+        <li class="hsg-nav__group-item hsg-nav__group-item--login">
+          
+            
+            
+            
+            <a class="homepage-nav-login" data-logged-in-text="Go to my account" data-logged-in-href="//app.hubspot.com/home" href="//app.hubspot.com/login">Log in</a>
+          
+        </li>
+
+        
+
+        <li class="hsg-nav__group-item">
+          
+            <a class="hsg-nav__group-item--utility" href="https://help.hubspot.com/?_ga=2.23678194.978470726.1592315215-1192486389.1556035228">Customer Support</a>
+          
+        </li>
+        
+        
+          <li class="hsg-nav__group-item hsg-nav__group-item--about hsg-nav__group-item--has-dropdown">
+            <div id="nav-main-link" class="hsg-nav__link-wrapper">
+              <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="About-submenu" class="hsg-nav__link">
+                <span class="hsg-nav__link-label">About</span>
+              </a>
+            </div>
+            <ul role="menu" id="About-submenu" aria-hidden="true" hidden class="hsg-nav__dropdown-list">
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li role="none" class="hsg-nav__dropdown-item">
+                    <a role="menuitem" class="homepage-nav-about-desktop" href="//www.hubspot.com/our-story">About Us</a>
+                  </li>
+                
+              
+                
+                  <li role="none" class="hsg-nav__dropdown-item">
+                    <a role="menuitem" href="//www.hubspot.com/careers">Careers</a>
+                  </li>
+                
+              
+                
+                  <li role="none" class="hsg-nav__dropdown-item">
+                    <a role="menuitem" class="homepage-nav-contact-us" href="//www.hubspot.com/company/contact">Contact Us</a>
+                  </li>
+                
+              
+                
+                  <li role="none" class="hsg-nav__dropdown-item">
+                    <a role="menuitem" href="//ir.hubspot.com">Investor Relations</a>
+                  </li>
+                
+              
+                
+                  <li role="none" class="hsg-nav__dropdown-item">
+                    <a role="menuitem" href="//www.hubspot.com/company/management">Management Team</a>
+                  </li>
+                
+              </ul>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div>
+  <nav class="hsg-nav-menu" data-fixed-element="target">
+    <div class="hsg-page-width-normal">
+      <div class="hsg-nav__inner">
+        <a href="/" id="hsg-nav__logo" alt="HubSpot Logo" aria-label="HubSpot Logo" class="logo-utility-nav">
+          
+          
+          <svg id="hsg-nav__logo-desktop">
+            <use xlink:href="#HSLogo_color" />
+          </svg>
+          <svg id="hsg-nav__logo-fixed">
+            <use xlink:href="#Sprocket" />
+          </svg>
+          <svg id="hsg-nav__logo-mobile" class="hide">
+            <use xlink:href="#Sprocket" />
+          </svg>
+          
+        </a>
+
+        <div id="hsg-nav__logo-caret">
+          
+          <svg id="hsg-nav__logo-caret-img" alt="Left caret to go back to home view">
+            <use xlink:href="#CaretRight" />
+          </svg>
+          
+          <span id="hsg-nav__logo-caret-home">Home</span>
+          
+        </div>
+
+        <div class="hsg-nav__group-item--search-container hide">
+          
+          
+  <!-- pageLang: en -->
+  <input type="search" class="blog-sticky-navigation__search-input" data-id="hsg-nav__search-input" placeholder="Search HubSpot.com" data-config="{&quot;contexts&quot;:[{&quot;selected&quot;:false,&quot;id&quot;:&quot;website&quot;,&quot;cx&quot;:&quot;009219321729865762236:z9gsnksfc30&quot;,&quot;label&quot;:&quot;Search HubSpot.com&quot;},{&quot;selected&quot;:true,&quot;id&quot;:&quot;blog&quot;,&quot;cx&quot;:&quot;009219321729865762236:fzizmixjdmi&quot;,&quot;label&quot;:&quot;Search the blog&quot;}],&quot;loadMoreButton&quot;:&quot;Load More Results&quot;,&quot;noResults&quot;:[&quot;That's odd...&quot;,&quot;couldn't find quite the right match.&quot;,&quot;Don't worry, try searching again up top.&quot;]}" aria-label="Search">
+  
+          
+        </div>
+
+        <div class="hsg-nav__burger-wrapper">
+          <button class="hsg-nav__burger" aria-label="Main menu" aria-haspopup="true" aria-expanded="false" aria-controls="burger-submenu">
+            <span class="hsg-nav__burger-label"></span>
+          </button>
+        </div>
+
+        <div role="menu" id="burger-submenu" aria-hidden="true" hidden class="hsg-nav__groups-wrapper">
+          <ul class="hsg-nav__group hsg-nav__group--primary">
+            
+            <li role="none" class="hsg-nav__group-item hsg-nav__group-item--order-1  hsg-nav__group-item--has-dropdown ">
+              <div class="hsg-nav__link-wrapper">
+                
+                <a href="#" role="menuitem" class="hsg-nav__link" aria-haspopup="true" aria-expanded="false" aria-controls="Software-submenu">
+                  <span class="hsg-nav__link-label">Software</span>
+                </a>
+                
+              </div>
+              
+                
+                  <!-- Software -->
+                  <ul role="menu" id="Software-submenu" aria-hidden="true" class="hsg-nav__dropdown-list hsg-nav__dropdown-cards hsg-nav__dropdown-list--1-col hsg-nav__dropdown-variant-c">
+                    <li role="none" class="hsg-nav__dropdown-list-title">Software</li>
+                    <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                      <div class="hsg-nav__dropdown-column">
+                        
+                          
+                            <div class="hsg-nav__box-link-none">
+                              
+                              <div class="hsg-nav__header-container">
+                                <h3 class="hsg-nav__header">The HubSpot CRM Platform</h3>
+                                <p class="hsg-nav__subheader" gtm="">All of HubSpot’s marketing, sales CRM, customer service, CMS, and operations software on one platform.</p>
+                              </div>
+                            </div>
+                          
+                        
+                          
+                            <a href="//www.hubspot.com/products/crm" class="hsg-nav__box-link ">
+                              
+                              <div class="hsg-nav__header-container">
+                                <h3 class="hsg-nav__header hsg-nav__header-link">Free HubSpot CRM</h3>
+                                <p class="hsg-nav__subheader" gtm="crm"></p>
+                              </div>
+                            </a>
+                          
+                        
+                          
+                            <a href="//www.hubspot.com/products/get-started" class="hsg-nav__box-link ">
+                              
+                              <div class="hsg-nav__header-container">
+                                <h3 class="hsg-nav__header hsg-nav__header-link">Overview of all products</h3>
+                                <p class="hsg-nav__subheader" gtm="crm"></p>
+                              </div>
+                            </a>
+                          
+                        
+                      </div>
+                    </li>
+                    <li class="hsg-nav__dropdown-row">
+                      <p class="hsg-nav__dropdown-row-description"></p>
+                      
+                        <a href="//www.hubspot.com/products/marketing" class="hsg-nav__box-link " gtm="marketing">
+                          
+                          <div class="hsg-nav__box-link-icon">
+                            
+                            <svg>
+                              <use xlink:href="#marketing" />
+                            </svg>
+                            
+                          </div>
+                          
+                          <div class="hsg-nav__header-container">
+                            <h4 class="hsg-nav__header" gtm="marketing">
+                              Marketing Hub
+                            </h4>
+                            <p class="hsg-nav__subheader" gtm="marketing">Marketing automation software. <span class="hsg-nav__subheader-highlight">Free and premium plans</span></p>
+                          </div>
+                        </a>
+                      
+                        <a href="//www.hubspot.com/products/sales" class="hsg-nav__box-link " gtm="sales">
+                          
+                          <div class="hsg-nav__box-link-icon">
+                            
+                            <svg>
+                              <use xlink:href="#sales" />
+                            </svg>
+                            
+                          </div>
+                          
+                          <div class="hsg-nav__header-container">
+                            <h4 class="hsg-nav__header" gtm="sales">
+                              Sales Hub
+                            </h4>
+                            <p class="hsg-nav__subheader" gtm="sales">Sales CRM software. <span class="hsg-nav__subheader-highlight">Free and premium plans</span></p>
+                          </div>
+                        </a>
+                      
+                        <a href="//www.hubspot.com/products/service" class="hsg-nav__box-link " gtm="service">
+                          
+                          <div class="hsg-nav__box-link-icon">
+                            
+                            <svg>
+                              <use xlink:href="#service" />
+                            </svg>
+                            
+                          </div>
+                          
+                          <div class="hsg-nav__header-container">
+                            <h4 class="hsg-nav__header" gtm="service">
+                              Service Hub
+                            </h4>
+                            <p class="hsg-nav__subheader" gtm="service">Customer service software. <span class="hsg-nav__subheader-highlight">Free and premium plans</span></p>
+                          </div>
+                        </a>
+                      
+                        <a href="//www.hubspot.com/products/cms" class="hsg-nav__box-link " gtm="cms">
+                          
+                          <div class="hsg-nav__box-link-icon">
+                            
+                            <svg>
+                              <use xlink:href="#cms" />
+                            </svg>
+                            
+                          </div>
+                          
+                          <div class="hsg-nav__header-container">
+                            <h4 class="hsg-nav__header" gtm="cms">
+                              CMS Hub
+                            </h4>
+                            <p class="hsg-nav__subheader" gtm="cms">Content management system software. <span class="hsg-nav__subheader-highlight">Premium plans</span></p>
+                          </div>
+                        </a>
+                      
+                        <a href="//www.hubspot.com/products/operations" class="hsg-nav__box-link " gtm="operations">
+                          
+                          <div class="hsg-nav__box-link-icon">
+                            
+                              <svg data-name="Operations Hub" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 144 144"><path d="M134.26 63.52A59.61 59.61 0 0016.76 56a1.77 1.77 0 002.48 2l19.06-8.75A6.09 6.09 0 0040.85 47 40.6 40.6 0 1197 103.15a6.09 6.09 0 00-2.25 2.55l-8.68 19.06a1.77 1.77 0 002 2.48 59.61 59.61 0 0046.19-63.72z" fill="#33475b" /><path d="M63.09 67.83a4.3 4.3 0 01-7.34-3 4.31 4.31 0 00-4.3-4.31h-9.9a4.31 4.31 0 00-4.3 4.31 4.3 4.3 0 01-7.34 3 4.31 4.31 0 00-6.09 0l-7 7a4.31 4.31 0 000 6.09 4.3 4.3 0 01-3 7.34 4.31 4.31 0 00-4.31 4.3v9.9a4.31 4.31 0 004.31 4.3 4.3 4.3 0 013 7.34 4.31 4.31 0 000 6.09l7 7a4.31 4.31 0 006.09 0 4.3 4.3 0 017.34 3 4.31 4.31 0 004.3 4.31h9.9a4.31 4.31 0 004.3-4.31 4.3 4.3 0 017.34-3 4.31 4.31 0 006.09 0l7-7a4.31 4.31 0 000-6.09 4.3 4.3 0 013-7.34 4.31 4.31 0 004.31-4.3v-9.9a4.31 4.31 0 00-4.31-4.3 4.3 4.3 0 01-3-7.34 4.31 4.31 0 000-6.09l-7-7a4.31 4.31 0 00-6.09 0zm-8.72 37.54a11.13 11.13 0 110-15.74 11.12 11.12 0 010 15.74z" fill="#ff7a59" /></svg>
+                            
+                          </div>
+                          
+                          <div class="hsg-nav__header-container">
+                            <h4 class="hsg-nav__header" gtm="operations">
+                              Operations Hub <span class="hsg-nav__ribbon">NEW</span>
+                            </h4>
+                            <p class="hsg-nav__subheader" gtm="operations">Operations software. <span class="hsg-nav__subheader-highlight">Free and premium plans</span></p>
+                          </div>
+                        </a>
+                      
+                    </li>
+                    <li class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links hsg-nav__dropdown-row--links-horizontal">
+                      <div class="hsg-nav__dropdown-column">
+                        
+                          
+                        
+                          
+                        
+                          
+                        
+                          
+                        
+                          
+                        
+                          
+                            <a href="//ecosystem.hubspot.com/marketplace/apps" class="hsg-nav__box-link ">
+                              <h3 class="hsg-nav__header">App Marketplace</h3>
+                              <p class="hsg-nav__subheader" gtm="app">Connect your favorite apps to HubSpot. <span class="hsg-nav__subheader-highlight">See all integrations</span></p>
+                            </a>
+                          
+                        
+                          
+                        
+                          
+                        
+                      </div>
+                    </li>
+                  </ul>
+                
+               
+            </li>
+            
+            <li role="none" class="hsg-nav__group-item hsg-nav__group-item--order-2 ">
+              <div class="hsg-nav__link-wrapper">
+                
+                <a role="menuitem" href="//www.hubspot.com/pricing/marketing" class="hsg-nav__link hsg-nav__link-active" aria-haspopup="false">
+                  <span class="hsg-nav__link-label">Pricing</span>
+                </a>
+                
+              </div>
+               
+            </li>
+            
+            <li role="none" class="hsg-nav__group-item hsg-nav__group-item--order-3  hsg-nav__group-item--has-dropdown ">
+              <div class="hsg-nav__link-wrapper">
+                
+                <a href="#" role="menuitem" class="hsg-nav__link" aria-haspopup="true" aria-expanded="false" aria-controls="Resources-submenu">
+                  <span class="hsg-nav__link-label">Resources</span>
+                </a>
+                
+              </div>
+              
+                
+                  <ul role="menu" id="Resources-submenu" aria-hidden="true" hidden class="hsg-nav__dropdown-list hsg-nav__dropdown-cards">
+                    <li role="none" class="hsg-nav__dropdown-list-title">Resources</li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li role="none" class="hsg-nav__link-section" gtm="">
+                      <div class="hsg-nav__link-section-icon-wrapper">
+                        <img class="hsg-nav__link-section-icon hsg-nav__box-link-icon" src="https://blog.hubspot.com/hubfs/WBZ-1165%20Global%20Nav%20Redesign/1-icon.svg" alt="Education">
+                      </div>
+                      <div class="hsg-nav__header-container">
+                        <h4 class="hsg-nav__header" gtm="">
+                          Education
+                        </h4>
+                        
+                        
+                        <a role="menuitem" href="//blog.hubspot.com" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Blog
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/resources/" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Ebooks, Guides &amp; More
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//academy.hubspot.com/courses" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Free Courses &amp; Certifications
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/inbound-marketing" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Inbound Methodology
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </li>
+                    
+                    <li role="none" class="hsg-nav__link-section" gtm="">
+                      <div class="hsg-nav__link-section-icon-wrapper">
+                        <img class="hsg-nav__link-section-icon hsg-nav__box-link-icon" src="https://blog.hubspot.com/hubfs/WBZ-1165%20Global%20Nav%20Redesign/2-icon.svg" alt="Why HubSpot ?">
+                      </div>
+                      <div class="hsg-nav__header-container">
+                        <h4 class="hsg-nav__header" gtm="">
+                          Why HubSpot ?
+                        </h4>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/case-studies" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Customer Stories
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/why-go-hubspot" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Why Choose HubSpot?
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </li>
+                    
+                    <li role="none" class="hsg-nav__link-section" gtm="">
+                      <div class="hsg-nav__link-section-icon-wrapper">
+                        <img class="hsg-nav__link-section-icon hsg-nav__box-link-icon" src="https://blog.hubspot.com/hubfs/WBZ-1165%20Global%20Nav%20Redesign/3-icon.svg" alt="Services">
+                      </div>
+                      <div class="hsg-nav__header-container">
+                        <h4 class="hsg-nav__header" gtm="">
+                          Services
+                        </h4>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/services" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Onboarding &amp; Consulting Services
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//ecosystem.hubspot.com/marketplace/solutions" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Hire a Service Provider
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </li>
+                    
+                    <li role="none" class="hsg-nav__link-section" gtm="">
+                      <div class="hsg-nav__link-section-icon-wrapper">
+                        <img class="hsg-nav__link-section-icon hsg-nav__box-link-icon" src="https://blog.hubspot.com/hubfs/WBZ-1165%20Global%20Nav%20Redesign/4-icon.svg" alt="Partners &amp; Developers">
+                      </div>
+                      <div class="hsg-nav__header-container">
+                        <h4 class="hsg-nav__header" gtm="">
+                          Partners &amp; Developers
+                        </h4>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a role="menuitem" href="//www.hubspot.com/partners" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Partner Programs
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        <a role="menuitem" href="//developers.hubspot.com/" class="hsg-nav__box-link">
+                          <p class="hsg-nav__subheader" gtm="">
+                            Developer Tools
+                          </p>
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </div>
+                    </li>
+                    
+                  </ul>
+                
+               
+            </li>
+            
+            
+            <li role="none" class="hsg-nav__group-item  hsg-nav__group-item--has-dropdown  hsg-nav__group-item--about-mobile">
+              <div class="hsg-nav__link-wrapper">
+                <a href="#" role="menuitem" class="hsg-nav__link homepage-nav-about-mobile" aria-haspopup="true" aria-expanded="false" aria-controls="About-submenu__mobile">
+                  <span class="hsg-nav__link-label">About</span>
+                </a>
+              </div>
+              <ul role="menu" id="About-submenu__mobile" aria-hidden="true" hidden class="hsg-nav__dropdown-list hsg-nav__dropdown-cards">
+                <li role="none" class="hsg-nav__dropdown-list-title">About</li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                  <a role="menuitem" href="//www.hubspot.com/our-story" class="hsg-nav__box-link homepage-nav-about-desktop ">
+                    <div class="hsg-nav__header">About Us</div>
+                  </a>
+                </li>
+                
+                
+                
+                <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                  <a role="menuitem" href="//www.hubspot.com/careers" class="hsg-nav__box-link">
+                    <div class="hsg-nav__header">Careers</div>
+                  </a>
+                </li>
+                
+                
+                
+                <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                  <a role="menuitem" href="//www.hubspot.com/company/contact" class="hsg-nav__box-link homepage-nav-contact-us ">
+                    <div class="hsg-nav__header">Contact Us</div>
+                  </a>
+                </li>
+                
+                
+                
+                <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                  <a role="menuitem" href="//ir.hubspot.com" class="hsg-nav__box-link">
+                    <div class="hsg-nav__header">Investor Relations</div>
+                  </a>
+                </li>
+                
+                
+                
+                <li role="none" class="hsg-nav__dropdown-row hsg-nav__dropdown-row--links">
+                  <a role="menuitem" href="//www.hubspot.com/company/management" class="hsg-nav__box-link">
+                    <div class="hsg-nav__header">Management Team</div>
+                  </a>
+                </li>
+                
+                </ul>
+              
+          </li></ul>
+          <ul class="hsg-nav__group hsg-nav__group--cta">
+            <li class="hsg-nav__group-item hsg-nav__group-item--cta">
+              
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+  
+    <a class="cta cta--regular cta--primary homepage-nav" href="//www.hubspot.com/products/get-started">Start free or get a demo <span class="hsg-sr-only">Start free or get a demo</span></a>
+  
+
+            </li>
+          </ul>
+
+          <ul role="menu" class="hsg-nav__group hsg-nav__group--utility">
+            <li role="none" class="hsg-nav__group-item hsg-nav__group--lang">
+              
+              
+              
+
+
+
+
+
+<ul role="menu" class="hsg-nav__group">
+  
+  <li class="hsg-nav__group-item hsg-nav__group-item--has-dropdown">
+    <div id="nav-main-link" class="hsg-nav__link-wrapper">
+      <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="Language-submenu-mobile" class="hsg-nav__link">
+        <span class="hsg-nav__link-label hsg-nav__link-label--globe"><svg class="hsg-nav__globe-icon"><use xlink:href="#hs-icon-globe" fill="currentColor" /></svg>English</span>
+      </a>
+    </div>
+    <ul role="menu" id="Language-submenu-mobile" aria-hidden="true" hidden class="hsg-nav__dropdown-list">
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">日本語</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Deutsch</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">English</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Español</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Português</a>
+        </li>
+      
+
+        <li role="none" class="hsg-nav__dropdown-item">
+          <a role="menuitem" class="hsg-nav__dropdown-country-link disabled ">Français</a>
+        </li>
+      </ul>
+  </li>
+
+  
+
+
+
+
+
+<li class="hsg-nav__group-item">
+  <div class="hsg-nav__link-wrapper">
+    <a href="//offers.hubspot.com/contact-sales" class="hsg-nav__link homepage-nav-contact-sales">
+          <span class="hsg-nav__link-label hsg-nav__link-label--contact-us">
+            <svg role="presentation" width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M323.963 81c2.124 0 3.852 1.778 3.852 3.964 0 1.905-.56 3.606-1.435 4.719-.661.843-1.502 1.35-2.417 1.35-.908 0-1.742-.5-2.4-1.33-.884-1.114-1.452-2.823-1.452-4.739 0-2.186 1.728-3.964 3.852-3.964zm3.487 9.089a8.438 8.438 0 012.898 2.2c.432.508.422 1.26-.012 1.766-1.545 1.805-3.812 2.945-6.33 2.945-2.547 0-4.836-1.165-6.382-3.004-.41-.488-.376-1.22.037-1.705a8.437 8.437 0 012.836-2.174c.895 1.272 2.118 2.06 3.466 2.06 1.358 0 2.59-.799 3.487-2.088z" id="nav-contact-sales" /></defs><use fill="currentColor" xlink:href="#nav-contact-sales" transform="translate(-317 -81)" fill-rule="evenodd" /></svg>
+            Contact Sales</span>
+        </a>
+      </div>
+    </li>
+
+</ul>
+              
+            </li>
+            <li role="none" class="hsg-nav__group-item hsg-nav__group-item--login">
+              
+              
+              
+              
+              <a role="menuitem" data-logged-in-text="Go to my account" data-logged-in-href="//app.hubspot.com/home" href="//app.hubspot.com/login">Log in</a>
+              
+            </li>
+            <li role="none" class="hsg-nav__group-item">
+              
+              <a role="menuitem" class="hsg-nav__group-item--utility" href="https://help.hubspot.com/?_ga=2.23678194.978470726.1592315215-1192486389.1556035228">Customer Support</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+  <div id="hsg-main-content"></div>
+</div>
+
+ 
+
+
+  
+    
+    
+    
+    
+      
+ 
+<!-- qaPage:  -->
+    
+      <nav class="blog-sticky-navigation" id="blog-sticky-nav">
+          <div class="hsg-page-width-normal">
+            <section class="blog-sticky-navigation__blog-navigation">
+              <ul>
+                
+                
+                <li><a href="//blog.hubspot.com/marketing" class="">Marketing</a></li>
+                
+                <li><a href="//blog.hubspot.com/sales" class="">Sales</a></li>
+                
+                <li><a href="//blog.hubspot.com/service" class="">Service</a></li>
+                
+                <li><a href="//blog.hubspot.com/website" class=" active">Website</a></li>
+                
+              </ul>
+            </section>
+            <section class="blog-sticky-navigation__ctas">
+                  <div class="blog-sticky-navigation__search">   
+                      
+  <!-- pageLang: en -->
+  <input type="search" class="blog-sticky-navigation__search-input" data-id="hsg-nav__search-input" placeholder="Search the blog..." data-config="{&quot;contexts&quot;:[{&quot;selected&quot;:false,&quot;id&quot;:&quot;website&quot;,&quot;cx&quot;:&quot;009219321729865762236:z9gsnksfc30&quot;,&quot;label&quot;:&quot;Search HubSpot.com&quot;},{&quot;selected&quot;:true,&quot;id&quot;:&quot;blog&quot;,&quot;cx&quot;:&quot;009219321729865762236:fzizmixjdmi&quot;,&quot;label&quot;:&quot;Search the blog&quot;}],&quot;loadMoreButton&quot;:&quot;Load More Results&quot;,&quot;noResults&quot;:[&quot;That's odd...&quot;,&quot;couldn't find quite the right match.&quot;,&quot;Don't worry, try searching again up top.&quot;]}">
+  <button class="blog-sticky-navigation__search-button"></button>
+  
+                  </div>
+                  <div class="blog-sticky-navigation__subscribe">
+                      
+                      <button class="cta cta--primary cta--small dropdown-button">
+                          Subscribe
+                      </button>
+                      <div class="blog-sticky-navigation__dropdown-container">
+                          
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <article data-background="gradient6-vertical" class="blog-subscribe-form  blog-subscribe-form--dropdown blog-card--no-hover">
+    <div class="blog-subscribe-form__error-text"></div>
+    <div class="blog-subscribe-form__overflow">
+      <div class="blog-subscribe-form__container" style="transform: translateX(-100%)">
+        
+        
+        <section class="blog-subscribe-form__options " data-slide="1">
+          <h2>Subscribe to Our Blog</h2> 
+          <p>Stay up to date with the latest marketing, sales, and service tips and news.</p>
+          <ul>
+              
+                
+                    <li><button class="cta cta--medium cta--secondary blog-subscribe-form__button" data-slideto="2">Subscribe via Email</button></li>
+                
+              
+          </ul>
+        </section>
+        
+        
+        
+            
+            
+            <section class="blog-subscribe-form__email show" data-slide="2">
+                <div class="blog-subscribe-form__thanks-positioning">
+                    <h3 class="blog-subscribe-form__heading">Subscribe via Email</h3>
+            
+                    <form data-formid="4ea5f424-2d32-44c7-b603-887d06d6bde0" novalidate>
+                        <input type="hidden" name="lifecyclestage" value="subscriber">
+                        <input type="hidden" name="content_language" value="English">
+                        <ul class="blog-subscribe-form__blog-list">
+													  
+                            
+                                <li style="display: none;">
+                                  <input class="frequency" name="blog_default_blog_subscription" data-frequency="daily">
+                                </li>
+                                <li style="">
+                                    <input type="checkbox" id="hs-marketing-blog-sticky" name="marketing_blog_subscribe_check_box_via_comments" data-frequency="daily" data-frequency-field="blog_default_blog_subscription" data-subscription-type-id="98684">
+                                    <label for="hs-marketing-blog-sticky" class="blog-subscribe-form__checkbox">Marketing</label>
+                                </li>
+                            
+                                <li style="display: none;">
+                                  <input class="frequency" name="blog_hubspots_inbound_sales_blog_subscription" data-frequency="daily">
+                                </li>
+                                <li style="">
+                                    <input type="checkbox" id="hs-sales-blog-sticky" name="sales_blog_subscribe_check_box_via_comments" data-frequency="daily" data-frequency-field="blog_hubspots_inbound_sales_blog_subscription" data-subscription-type-id="171105">
+                                    <label for="hs-sales-blog-sticky" class="blog-subscribe-form__checkbox">Sales</label>
+                                </li>
+                            
+                                <li style="display: none;">
+                                  <input class="frequency" name="customer_success_subscription" data-frequency="weekly">
+                                </li>
+                                <li style="">
+                                    <input type="checkbox" id="hs-service-blog-sticky" name="success_blog_subscribe_check_box_general_use_" data-frequency="weekly" data-frequency-field="customer_success_subscription" data-subscription-type-id="4071241">
+                                    <label for="hs-service-blog-sticky" class="blog-subscribe-form__checkbox">Service</label>
+                                </li>
+                            
+                                <li style="display: none;">
+                                  <input class="frequency" name="website_blog_subscription" data-frequency="Daily">
+                                </li>
+                                <li style="">
+                                    <input type="checkbox" id="hs-website-blog-sticky" name="website_blog_subscription" data-frequency="Daily" data-frequency-field="website_blog_subscription" data-subscription-type-id="6772329">
+                                    <label for="hs-website-blog-sticky" class="blog-subscribe-form__checkbox">Website</label>
+                                </li>
+                            
+                        </ul>
+                        <ul class="hs-error-msgs inputs-list" role="alert">
+                            <li data-reactid=".hbspt-forms-0.1:$1.1:$email.3.$0">
+                                <label class="validation blog-list-validation"></label>
+                            </li>
+                        </ul>
+                        <div class="blog-subscribe-form__email-input-container">
+                            <div class="blog-subscribe-form__email-input">
+                                <label for="email-address">Email Address</label>
+                              <input type="email" placeholder="" id="email-address" name="email" value="" required>
+                            </div>
+                            
+                        </div>
+                        <ul class="hs-error-msgs inputs-list" role="alert">
+                            <li data-reactid=".hbspt-forms-0.1:$1.1:$email.3.$0">
+                                <label class="validation email-validation"></label>
+                            </li>
+                         </ul>
+                        <p class="blog-subscribe-form__gdpr-notice">We're committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our <a href="https://legal.hubspot.com/privacy-policy" target="_blank">privacy policy</a>.</p>
+                        
+                        
+                            <input type="submit" value="Subscribe" class="blog-subscribe-form__button cta cta--primary-light cta--medium">
+                        
+                    </form>
+                    
+                </div>
+                
+							  
+                
+							      
+                    
+                
+            </section>
+            
+        
+				
+        
+            <section class="blog-subscribe-form__thank-you" data-slide="3">
+                <div class="blog-subscribe-form__lockup">
+                    <img src="https://blog.hubspot.com/hubfs/assets/blog.hubspot.com/images/white-checkmark.png" alt="Thank You!
+You have been subscribed.">
+                    <h4>Thank You!
+You have been subscribed.</h4>
+                </div>
+            </section>
+        
+      </div>
+    </div>
+  </article>
+
+                      </div>
+                  </div>
+                  <div class="blog-sticky-navigation__site-cta">
+                      
+                          <a href="//www.hubspot.com/products/get-started?hubs_campaign=blog-sticky-nav&amp;hubs_content=blog-posts&amp;hubs_cta=blog-posts-blog-sticky-nav-cta" class="cta cta--primary cta--small homepage-nav blog-sticky-nav">Start free or get a demo</a>
+                      
+                  </div>
+              </section>
+          </div>
+          <progress value="0" id="blog-progress-bar" class="blog-progress-bar"></progress>
+        </nav>
+     
+
+    
+  
+
+
+
+<!--[if lte IE 10]>
+<a href="http://outdatedbrowser.com" class="browser-upgrade-notification" style="width: 100%; text-align: center; color: #FFF; background-color: #11434c; display: block;">
+  <p style="font-size: .875em; color: #FFF; padding: 15px 0px; margin: 0px;">
+    <img class="browser-upgrade-notification__emoji"
+          src="https://www.hubspot.com/hubfs/assets/hubspot.com/icons/Sad_Face_Emoji_large.png?t=1494954070529" alt=""
+          style="max-height: 1.3em; position: relative; top: 4px; right: 3px;">
+      Looks like your browser is stuck in the past. Update to the latest version for a better, faster, stronger (and safer) browsing experience.
+    <img class="browser-upgrade-notification__arrow"
+          src="https://cdn2.hubspot.net/hubfs/53/assets/hubspot.com/icons/Arrow.png" style="position: relative; left: 0%;">
+  </p>
+</a>
+<![endif]-->
+
+</div><!--end widget-span -->
+
+</div><!--end row-->
+</div><!--end row-wrapper -->
+
+</div><!--end widget-span -->
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div>
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+            </div><!--end row-wrapper -->
+        </div><!--end header -->
+    </div><!--end header wrapper -->
+  
+    <div class="body-container-wrapper">
+        <div class="body-container container-fluid">
+            <div class="row-fluid-wrapper row-depth-1 row-number-1">
+                <div class="row-fluid ">
+                    <main class="blog">
+                        
+                            
+							              
+                                 
+                            
+                            
+                             
+                            
+                            
+															
+															
+															
+															
+															
+															
+
+															
+															
+                            
+                            
+                            
+                            
+        
+                            
+                            
+                                
+                                <div class="hsg-page-width-normal">
+                                    <section class="post-header">
+                                        <div class="post-header__text">
+                                            <div class="post-header__meta">
+                                                
+                                                <span>
+    <div class="blog-post__meta">
+        <a href="https://blog.hubspot.com/website">Website</a> | 8 min read
+    </div>
+</span>
+                                            </div>
+                                            <h1 class="post-header__title"><span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">REST APIs: How They Work and What You Need to Know</span></h1>
+                                            <div class="post-author-tag">
+                                                <div class="post-author-tag__text">
+                                                    <p><strong>Written by </strong> <a href="https://blog.hubspot.com/website/author/jamie-juviler">Jamie Juviler</a>
+                                                    <a target="_blank" href="https://twitter.com/WebsiteJamie" class="post-author-tag__twitter">
+                                                        
+                                                        
+                                                        
+                                                        @WebsiteJamie
+                                                        
+                                                    </a>
+                                                      </p>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="post-header__image">
+                                            <img src="https://blog.hubspot.com/hubfs/Google%20Drive%20Integration/REST%20APIs%20How%20They%20Work%20and%20Why%20You%20Should%20Use%20Them.jpeg" alt="two people using a computer to learn about REST APIs">
+                                        </div>
+                                    </section>
+                                </div>
+                            
+                            
+                            <div class="hsg-page-width-normal">
+                                <section class="blog-post-content">
+                                    <main class="post-body">
+                                        <main class="post-body__content">
+                                            <div class="post-content
+                                            
+                                            ">
+                                            		
+                                                <div class="post-content__sticky-social">
+                                                        
+                                                </div>
+                                                <div class="hsg-rich-text">
+                                                    
+                                                    
+                                                    <div class="hsg-rich-text__wrapper post-content__wrapper blog-postPage-content">
+                                                        
+																											    
+																											  
+                                                        
+                                                        
+
+                                           
+ <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><p>In this age of integrations, sharing data between systems is more important than ever.</p>
+<!--more--> Imagine an ecommerce website without integrations. On top of handling product listings, your site would need to build tools for processing payment, shipping, email automation, user accounts, and other functions all by itself. This isn’t a scalable solution — it’s more efficient to outsource these tasks to other services.
+<p>So, in order to work together, software applications use application programming interfaces, or APIs. APIs provide a standardized way for two applications to send data back and forth. Your ecommerce site can interact with payment software, shipping software, and any other necessary integrations through their respective APIs.</p>
+<p>There are many approaches to building an API, but if you’re interested in introducing software integrations to your product, there’s one special method you should know: <strong>REST APIs</strong>. In this guide, I’ll explain what a REST API is and why they’re so useful.</p>
+<p>Before getting started, you should be familiar with <a href="/website/application-programming-interface-api" rel="noopener" target="_blank">what APIs are and how they work</a>.</p>
+<p><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-54aad768-4672-495a-bbe4-8bdc0f5098d3"><span class="hs-cta-node hs-cta-54aad768-4672-495a-bbe4-8bdc0f5098d3" id="hs-cta-54aad768-4672-495a-bbe4-8bdc0f5098d3"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/53/54aad768-4672-495a-bbe4-8bdc0f5098d3" target="_blank"><img class="hs-cta-img" id="hs-cta-img-54aad768-4672-495a-bbe4-8bdc0f5098d3" style="border-width:0px;margin: 0 auto; display: block; margin-top: 20px; margin-bottom: 20px" src="https://no-cache.hubspot.com/cta/default/53/54aad768-4672-495a-bbe4-8bdc0f5098d3.png" alt="Download Now: Free Intro Guide to HTML &amp; CSS" align="middle"></a></span><script charset="utf-8" src="/hs/cta/cta/current.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script><script type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"> hbspt.cta._relativeUrls=true;hbspt.cta.load(53, '54aad768-4672-495a-bbe4-8bdc0f5098d3', {"region":"na1"}); </script></span><!-- end HubSpot Call-to-Action Code --></p>
+<h2 style="font-weight: normal;">What is a REST API?</h2>
+<p>To understand REST, we need to review some key terms first:</p>
+<ul>
+<li>A <strong>client </strong>is the person or program using the API. The client makes requests to the API in order to retrieve some information or change something within the application. Your web browser is a client — it interacts with APIs different websites to get page content from them. The requested info is sent back to your browser and displayed on your screen.</li>
+<li>A <strong>resource</strong> is any piece of information that the API can provide the client. For instance, a resource in Facebook’s API could be a user, a page, a photo, or a post. Each resource has a unique name, called the resource identifier.</li>
+<li>A <strong>server</strong> is used by the application that receives client requests, and contains resources that the client wants. The server has an API to interact with clients without giving them direct access to content stored in its database.</li>
+</ul>
+<p>Now for our definition. REST is a set of guidelines that software can use to communicate over the internet in order to make integrations simple and scalable. A REST API (also called a “RESTful” API) is a specific type of API that follows these guidelines.</p>
+<p>REST stands for <strong>Representational State Transfer</strong>. This means that when a client requests a resource using a REST API, the server <em>transfers</em> back the current <em>state</em> of the resource in a standardized <em>representation</em>.</p>
+<p>In other words, REST APIs work by fielding requests for a resource and returning all relevant information about the resource, translated into a format that clients can easily interpret (this format is determined by the API receiving requests). Clients can also modify items on the server and even add new items to the server through a REST API.</p>
+<p>Let’s say I want to build a program that integrates with YouTube. My program (the client) can ask YouTube’s REST API for information about a specific video (a resource). YouTube’s API will respond to my request with the resource state, which includes attributes like the video name, publishing date, and view count, and video link, all packaged in a format that my program can quickly parse and use. My program could also post a video (i.e., add a new resource) to my personal YouTube channel through the API.</p>
+<p>Now that we know the benefits of REST APIs, let’s go into detail about what makes REST APIs different from other types of APIs.</p>
+<h2 style="font-weight: normal;">The Six Rules of REST APIs</h2>
+<p>To fully benefit from the functionality that REST provides, APIs must follow six requirements. (Well, technically five are required and one is optional.) Each requirement lays the groundwork for a fast and versatile API.</p>
+<h3 style="font-weight: normal;">1. Client-Server Separation</h3>
+<p>Under REST architecture, the client and server can only interact in one way: The client sends a request to the server, then the server sends a response back to the client. Servers cannot make requests and clients cannot respond — all interactions are initiated by the client.</p>
+<p>By simplifying communication between clients and servers, RESTful APIs keep the two conveniently independent. This way, client software can grow their builds without worrying about affecting any other servers, and server contents can be modified without inadvertently affecting clients.</p>
+<h3 style="font-weight: normal;">2. Uniform Interface</h3>
+<p>This guideline states that all requests and all responses must follow a common protocol, or a way of formatting their messages. Applications and servers are written in all sorts of different languages that don’t do a great job of working together without an intermediary. A uniform interface is a common language for any client to communicate with any REST API.</p>
+<p>Without standardized communication, translating requests and responses between software would be a total mess. Minor discrepancies would cause information to be jumbled and lost, and applications would have to update their request processes whenever APIs updated theirs. A uniform interface eliminates this possibility.</p>
+<p>For most REST APIs, this common language is HTTP, or <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" rel="noopener" target="_blank">Hyper-Text Transfer Protocol</a>. HTTP wasn’t created specifically for REST. Rather, REST adopted this communication protocol as the standard for applications that use it.</p>
+<p>To use HTTP with a REST API, the client sends a request in a specific format that might look familiar to you. For example, a request to the YouTube API for video data looks like this:</p>
+<p>
+</p><pre class="syntax"> <code class="html"><p></p>
+<p>GET https://www.googleapis.com/youtube/v3/channels?part=contentDetails</p>
+</code><p><code class="html"></code></p></pre>
+<p></p>
+<p>Like all requests to a REST API, this request contains two pieces of information:</p>
+<ul>
+<li><strong>GET</strong> is the HTTP method. This specifies the action the client wants to make on the resource. There four basic HTTP requests a client can make are:
+<ul>
+<li>GET: To retrieve a resource.</li>
+<li>POST: To create a new resource.</li>
+<li>PUT: To edit or update an existing resource.</li>
+<li>DELETE: To delete a resource.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>https://… </strong>is the URL. The URL contains the uniform resource identifier, or URI, which specifies the target resource.</li>
+</ul>
+<p>In this case, the URL is also called an <strong>endpoint</strong> because it is the location where the API actually interacts with the client.</p>
+<p>After receiving and validating the request, the host returns information about the target resource. Usually, the information is back sent in a format called JSON, which stands for <a href="https://www.json.org/json-en.html" rel="noopener" target="_blank">JavaScript Object Notation</a>. JSON lays out all the contents of a resource in a lightweight format that humans can easily read.</p>
+<p><a href="https://developers.google.com/youtube/v3/docs/videos" rel="noopener" target="_blank">This page in YouTube's API documentation</a> shows the format of a Youtube Video resource formatted in JSON. Can you identify some of the different resources provided?</p>
+<h3 style="font-weight: normal;">3. Stateless</h3>
+<p>All calls with a REST API must be stateless. This means that every interaction is independent, and each request and response provides all the information required to complete the interaction. Every request by the client is interpreted by the server as a brand new ask — the server remembers nothing about past requests.</p>
+<p>Stateless transfers greatly reduce the amount of server memory needed and improve the odds of a successful response, since the server is not required to take additional action to retrieve old data. This ensures that these interactions are scalable: As software grows and makes more requests, developers don’t need to worry about significantly more memory being used, or overloading the server with requests.</p>
+<h3 style="font-weight: normal;">4. Layered System</h3>
+<p>So far I’ve described API requests as a simple interaction between a client and server, but this is a bit of a simplification. In reality, there are typically more servers between these two entities. These servers, or layers, are there to add security, handle and distribute traffic, or assist with a number of other important functions.</p>
+<p>This principle requires that messages between the client and target server should always be formatted and processed the same way, regardless of layers that sit between them. Additional layers should not affect client-server interactions.</p>
+<p>When developers follow this guideline, server systems can be rearranged, updated, or otherwise modified with no effect on the core request-response.</p>
+<h3 style="font-weight: normal;">5. Cacheable</h3>
+<p>Caching occurs when media is stored on a client’s device when visiting a website. When a client returns to that site, the cached data is loaded quickly from local storage instead of being fetched again from the server. Caching saves server resources and bandwidth while decreasing page load time, which is why most large websites do it.</p>
+<p>REST APIs are created with data caching in mind. When a server sends its response to a client, the response should indicate whether the resource provided can be cached, and for how long.</p>
+<h3 style="font-weight: normal;">6. Code on Demand (Optional)</h3>
+<p>The final REST principle is optional. If desired, an API can send computer code to clients in its response. This empowers the client to run the code in its own backend.</p>
+<p>As long as an API adheres to this set of rules, it is considered RESTful. However, these rules leave plenty of room for developers to customize the functionality of their API. This flexibility distinguishes REST APIs from another common web API method, the Simple Object Access Protocol (SOAP).</p>
+
+  
+  <div class="hsg-featured-snippet">
+    <div class="hsg-featured-snippet__wrapper">
+      <h2>REST API vs. SOAP API</h2>
+      <div class="hsg-featured-snippet__wrapper--content" data-type="paragraph">
+        <p>REST is usually compared to SOAP, another way to build applications that work over HTTP. The main difference between REST and SOAP is that REST is a set of guidelines, and SOAP is a protocol. REST allows for building APIs with any method, including HTTP, URLs, and JSON. SOAP only uses XML for sending data.</p>
+        </div>
+    </div>
+  </div>
+
+<p>REST is considered a simpler, more efficient alternative to SOAP because it requires writing less code to complete tasks and follows a less rigid structure and logic than SOAP. Additionally, REST sets guardrails for API design, but leaves many choices up to the developer building the API.</p>
+<h2 style="font-weight: normal;">Why use REST APIs?</h2>
+<p>The REST framework was introduced by computer scientist Roy Fielding in 2000, and today it shapes how we view, modify, and transfer content online. Many of the most popular web and cloud companies use REST APIs for their applications, including Facebook, YouTube, Twitter, and Google.</p>
+<p>But why REST? Basically, it’s an excellent system for web apps. Here are the main benefits to this type of API:</p>
+<ul>
+<li><strong>REST APIs are flexible.</strong> They can handle many types of requests and send data in many different formats.</li>
+<li><strong>REST APIs are scalable.</strong> They are designed for communication between any two pieces of software, regardless of size or capability. As a web application grows and adds more resources, its REST API will be able to quickly handle the increasing amount and variety of requests.</li>
+<li><strong>REST APIs incorporate existing web technologies</strong>, making them relatively easy to build and use. To request a resource via a REST API, you just need to provide its URL.</li>
+</ul>
+<h2 style="font-weight: normal;">How to Use a REST API</h2>
+<p>Web applications with publicly available APIs will have documentation available on the “developers” section of their websites. Here you’ll find instructions on how to access and use the API in conjunction with your own software. If the API is built with REST principles, the documentation will probably indicate this.</p>
+<p>Many APIs require an <strong>API key</strong> to use. An API key is a unique string of characters that an API provider gives to a developer to authorize access to their API. API keys are often sent with client requests to identify the client to the server. Keep your API key(s) private. If your key falls into the wrong hands, it could be used to do some not-so-good things seemingly on your behalf.</p>
+<p>To test out a public API, use a tool that can structure HTTP requests, like <a href="https://www.postman.com/downloads/" rel="noopener" target="_blank">Postman</a>. Try a variety of different HTTP methods and URLs, and see what happens.</p>
+<h2 style="font-weight: normal;">REST API Examples</h2>
+<p>You can find REST APIs all over the web — you’ve likely used some today without realizing it. Here are a few examples:</p>
+<h4><a href="https://developer.twitter.com/en/docs" rel="noopener" target="_blank">Twitter</a></h4>
+<p>The Twitter API lets third-party applications read and write data. Use it to write and post tweets, share tweets, and read profiles. This API is especially effective for downloading and analyzing large amounts of tweets about specific topics. <a href="/website/how-to-use-twitter-api" rel="noopener" target="_blank">Learn more about using Twitter’s API in our guide.</a></p>
+<h4><a href="https://developers.facebook.com/docs/instagram-basic-display-api" rel="noopener" target="_blank">Instagram</a></h4>
+<p>The Instagram Basic Display API offers access to profile information, photos, and videos. <a href="/website/instagram-api-examples" rel="noopener" target="_blank">You can utilize this API</a> and others to build apps that pull this user information and integrate it into your own product. Instagram also has a <a href="https://developers.facebook.com/docs/instagram-api/" rel="noopener" target="_blank">Graph API</a> available for professional Instagram accounts to manage their online activities.</p>
+<h4><a href="https://developer.spotify.com/documentation/web-api/" rel="noopener" target="_blank">Spotify</a></h4>
+<p>Spotify’s web API allows clients to request information about artists, songs, albums, and playlists on its platform. You can also use it to add songs to playlists, pause and play music, shuffle songs, and <a href="https://developer.spotify.com/documentation/web-api/reference-beta/" rel="noopener" target="_blank">a lot more</a>.</p>
+<h4><a href="https://developers.hubspot.com/docs/api/overview" rel="noopener" target="_blank">HubSpot</a></h4>
+<p>All of HubSpot’s APIs are made with REST conventions and designed for robust integrations that help businesses get the most value out of HubSpot’s tools. You can add advanced functionality to HubSpot’s powerful marketing software and sync your HubSpot account with other useful tools.</p>
+<p>For more REST API examples that you can use for your business, check out our list of our favorite <a href="/website/free-open-apis" rel="noopener" target="_blank">free and open APIs for marketers</a>.</p>
+<h2 style="font-weight: normal;">Don’t Sleep on REST</h2>
+<p>It’s a common belief that REST APIs will soon be the industry standard for web-based communications, and for good reason. They enable any two online applications to interact and share data, regardless of their sizes or capabilities. Through REST, a small startup can interface with a massive government agency, and vice versa.</p>
+<p>Software tools can create amazingly powerful and innovative systems by working together, which is something any growing online platform should want to be a part of. If you’re looking to connect your app to the software world, don’t sleep on REST.</p>
+<p><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-b4b6cb84-2a18-490b-840d-883884a94a83"><span class="hs-cta-node hs-cta-b4b6cb84-2a18-490b-840d-883884a94a83" id="hs-cta-b4b6cb84-2a18-490b-840d-883884a94a83"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/53/b4b6cb84-2a18-490b-840d-883884a94a83" target="_blank"><img class="hs-cta-img" id="hs-cta-img-b4b6cb84-2a18-490b-840d-883884a94a83" style="border-width:0px;margin: 0 auto; display: block; margin-top: 20px; margin-bottom: 20px" src="https://no-cache.hubspot.com/cta/default/53/b4b6cb84-2a18-490b-840d-883884a94a83.png" alt="New Call-to-action" align="middle"></a></span><script charset="utf-8" src="/hs/cta/cta/current.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script><script type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"> hbspt.cta._relativeUrls=true;hbspt.cta.load(53, 'b4b6cb84-2a18-490b-840d-883884a94a83', {"region":"na1"}); </script></span><!-- end HubSpot Call-to-Action Code --></p>
+<p>
+		
+	 </p><div id="slidebox"><a class="close">&nbsp;</a><!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-be00be7b-acfc-4948-9055-bf6bf9746111"><span class="hs-cta-node hs-cta-be00be7b-acfc-4948-9055-bf6bf9746111" id="hs-cta-be00be7b-acfc-4948-9055-bf6bf9746111"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/53/be00be7b-acfc-4948-9055-bf6bf9746111" target="_blank"><img class="hs-cta-img" id="hs-cta-img-be00be7b-acfc-4948-9055-bf6bf9746111" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/53/be00be7b-acfc-4948-9055-bf6bf9746111.png" alt="css introduction"></a></span><script charset="utf-8" src="/hs/cta/cta/current.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script><script type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"> hbspt.cta._relativeUrls=true;hbspt.cta.load(53, 'be00be7b-acfc-4948-9055-bf6bf9746111', {"region":"na1"}); </script></span><!-- end HubSpot Call-to-Action Code --></div>
+<p></p></span>
+                                                        
+                                                        
+                                                            
+                                                        
+                                                        
+                                                        
+                                                        <p class="post-content__publish-date">Originally published Jul 27, 2020 7:00:00 AM, updated May 28 2021</p>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+            
+                                                        <div class="post-content__topic-container blog-postPage-topic">
+                                                            
+                                                            
+                                                            
+                                                                
+                                                                                                                     
+                                                                    
+                                                                    <p>Topics:</p>
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                      <a href="https://blog.hubspot.com/website/application-programming-interface-api" class="post-content__topic" data-hubs_params="false">Application Programming Interface (API)</a>
+                                                                    
+                                                                
+                                                            
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class="post-content__social-share-container">
+                                                            <div id="hs_cos_wrapper_End_of_Post_CTA" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_custom_widget" style="" data-hs-cos-general-type="widget" data-hs-cos-type="custom_widget">
+
+
+
+<div class="wt-blog__post__cta post-content__bottom-cta">
+    
+        <div class="wt-blog__post__cta__content">
+            <h3>Don't forget to share this post!</h3>
+            <div class="addthis_inline_share_toolbox"></div>
+        </div>
+    
+</div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+																					
+                                            
+    
+    
+    
+
+    
+    <section class="blog-section-header  blog-section-header--border-top    blog-section-header--arrow-down ">
+        <h3 class="blog-section-header__heading">Related Articles</h3>
+    </section>
+
+                                            
+                                            
+                                            
+                                                
+    
+    
+    <section class="related-posts">
+    
+      
+        
+          
+        
+      
+      
+			
+      
+        
+        
+            
+            
+                
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                    
+                    
+                        
+                        
+    
+    <!-- hasFeaturedImage: https://www.hubspot.com/hubfs/api.jpg --> 
+    
+    
+    
+    <article class="blog-card blog-card--one-third ">
+        
+      
+        
+                <figure>
+                    <a href="https://blog.hubspot.com/website/application-programming-interface-api">
+                        <img src="https://blog.hubspot.com/hubfs/api.jpg" alt="The Ultimate Guide to Accessing &amp; Using APIs">
+                    </a>
+                </figure>
+        
+        
+        
+          <div class="blog-card__content">
+            
+            
+                
+            
+            
+            <h3 class="blog-card__content-title">
+                <a href="https://blog.hubspot.com/website/application-programming-interface-api">
+                    The Ultimate Guide to Accessing &amp; Using APIs
+                </a>
+            </h3>
+            
+            
+            <div class="blog-card__meta">
+                <a href="https://blog.hubspot.com/website" class="blog-card__blog-link">
+                    Website&nbsp;
+                </a>
+                <a href="https://blog.hubspot.com/website/application-programming-interface-api" class="blog-card__read-time">
+                    | 17 min read
+                </a>
+            </div>
+        
+        </div>
+        
+    </article>
+
+                        
+                    
+                
+                    
+                
+                    
+                    
+                        
+                        
+    
+    <!-- hasFeaturedImage: https://www.hubspot.com/hubfs/how-to-use-instagram-api.jpeg --> 
+    
+    
+    
+    <article class="blog-card blog-card--one-third ">
+        
+      
+        
+                <figure>
+                    <a href="https://blog.hubspot.com/website/instagram-api-examples">
+                        <img src="https://blog.hubspot.com/hubfs/how-to-use-instagram-api.jpeg" alt="11 Ways to Use Instagram’s API for Your Business [Examples]">
+                    </a>
+                </figure>
+        
+        
+        
+          <div class="blog-card__content">
+            
+            
+                
+            
+            
+            <h3 class="blog-card__content-title">
+                <a href="https://blog.hubspot.com/website/instagram-api-examples">
+                    11 Ways to Use Instagram’s API for Your Business [Examples]
+                </a>
+            </h3>
+            
+            
+            <div class="blog-card__meta">
+                <a href="https://blog.hubspot.com/website" class="blog-card__blog-link">
+                    Website&nbsp;
+                </a>
+                <a href="https://blog.hubspot.com/website/instagram-api-examples" class="blog-card__read-time">
+                    | 8 min read
+                </a>
+            </div>
+        
+        </div>
+        
+    </article>
+
+                        
+                    
+                
+                    
+                
+                    
+                    
+                        
+                        
+    
+    <!-- hasFeaturedImage: https://cdn2.hubspot.net/hubfs/53/youtube-api.jpg --> 
+    
+    
+    
+    <article class="blog-card blog-card--one-third ">
+        
+      
+        
+                <figure>
+                    <a href="https://blog.hubspot.com/website/how-to-get-youtube-api-key">
+                        <img src="https://blog.hubspot.com/hubfs/youtube-api.jpg" alt="How to Get a YouTube API Key &amp; Put YouTube Content on Your Website">
+                    </a>
+                </figure>
+        
+        
+        
+          <div class="blog-card__content">
+            
+            
+                
+            
+            
+            <h3 class="blog-card__content-title">
+                <a href="https://blog.hubspot.com/website/how-to-get-youtube-api-key">
+                    How to Get a YouTube API Key &amp; Put YouTube Content on Your Website
+                </a>
+            </h3>
+            
+            
+            <div class="blog-card__meta">
+                <a href="https://blog.hubspot.com/website" class="blog-card__blog-link">
+                    Website&nbsp;
+                </a>
+                <a href="https://blog.hubspot.com/website/how-to-get-youtube-api-key" class="blog-card__read-time">
+                    | 9 min read
+                </a>
+            </div>
+        
+        </div>
+        
+    </article>
+
+                        
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+                    
+                    
+                
+                    
+                
+            
+        
+      
+			
+      
+    
+    </section>
+
+                                            
+																					
+                                        </main>
+                                    </main>
+                                  
+                                    <div class="blog-sticky-footer open hide" data-background="gradient4">
+                                      <div class="hs-page-width-normal">
+                                        <div class="blog-sticky-footer__container" data-timeout="3000">
+                                          <div class="blog-sticky-footer__interactor"></div>
+                                          <div class="blog-sticky-footer__collapsed-content hidden-content">
+                                            <p><strong>Expand Offer</strong></p>
+                                          </div>
+                                          <div class="blog-sticky-footer__open-content visible-content">
+                                            <p><strong>Sign up for HubSpot's CMS Software</strong></p>
+                                            <a href="https://www.hubspot.com/products/cms?hubs_post-cta=mobile-blog-sticky" class="cta cta--medium cta--primary blog-sticky-update">Get it now</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  
+                                </section>
+                            </div>
+											
+                            <div data-modal="downloadForLater" data-exit="0" class="hsg-modal-container">
+                                <div class="hsg-modal-contents">
+                                	<div data-background="secondary4" class="hsg-modal-header">
+                                        <span class="hsg-icon hsg-icon-close"></span>
+                                    </div>
+                                	<div class="hsg-modal-text" style="text-align: left">
+                                	    <span id="hs_cos_wrapper_download_for_later" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_download_for_later_title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text">Download for Later</h3>
+
+<div id="hs_form_target_download_for_later"></div>
+
+
+
+
+
+
+
+
+
+</span>
+                                	</div>
+                                </div>
+                            </div>
+											
+                        
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="footer-container-wrapper">
+        <div class="footer-container container-fluid">
+            <div class="row-fluid-wrapper row-depth-1 row-number-1">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-global_group " style="" data-widget-type="global_group" data-x="0" data-w="12">
+                        <div class="" data-global-widget-path="generated_global_groups/4255443445.html"><div class="row-fluid-wrapper row-depth-1 row-number-1 ">
+<div class="row-fluid ">
+<div class="span12 widget-span widget-type-raw_jinja " style="" data-widget-type="raw_jinja" data-x="0" data-w="12">
+
+
+<footer class="hsg-footer">
+  <div class="hsg-footer__layout">
+    <div id="back-link" class="hsg-footer__logo-caret">
+      
+      <a class="hsg-footer__logo-caret-home" href="#">BACK</a>
+      <span class="hsg-footer__close" role="img" aria-label="Close"></span>
+      
+    </div>
+    <nav class="hsg-footer__nav">
+      <div class="hsg-footer__nav-left" role="navigation">
+        <section class="hsg-footer__nav-column hsg-footer__nav-column-left">
+  <input type="checkbox" id="hsg-footer-column-0" name="hsg-footer-column-0">
+  <label for="hsg-footer-column-0">Popular Features</label>
+  <ul>
+    <li class="hsg-footer__nav-item" data-order="0">
+      <a href="https://www.hubspot.com/products/sales/schedule-meeting" data-order="0" data-linkorder="0">Free Meeting Scheduler App</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="1">
+      <a href="https://www.hubspot.com/products/marketing/social-inbox" data-order="1" data-linkorder="1">Social Media Tools</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="2">
+      <a href="https://www.hubspot.com/products/sales/email-tracking" data-order="2" data-linkorder="2">Email Tracking Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="3">
+      <a href="https://www.hubspot.com/products/sales/sales-automation" data-order="3" data-linkorder="3">Sales Email Automation</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="4">
+      <a href="https://www.hubspot.com/products/marketing/ads" data-order="4" data-linkorder="4">Ads Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="5">
+      <a href="https://www.hubspot.com/products/marketing/email" data-order="5" data-linkorder="5">Email Marketing Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="6">
+      <a href="https://www.hubspot.com/products/crm/lead-management" data-order="6" data-linkorder="6">Lead Management Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="7">
+      <a href="https://www.hubspot.com/products/crm/pipeline-management" data-order="7" data-linkorder="7">Pipeline Management Tools</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="8">
+      <a href="https://www.hubspot.com/products/sales/email-templates-sales" data-order="8" data-linkorder="8">Sales Email Templates</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="9">
+      <a href="https://www.hubspot.com/products/service/help-desk" data-order="9" data-linkorder="9">Help Desk Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="10">
+      <a href="https://www.hubspot.com/products/marketing/forms" data-order="10" data-linkorder="10">Free Online Form Builder</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="11">
+      <a href="https://www.hubspot.com/products/crm/chatbot-builder" data-order="11" data-linkorder="11">Free Chatbot Builder</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="12">
+      <a href="https://www.hubspot.com/products/crm/live-chat" data-order="12" data-linkorder="12">Free Live Chat Software</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="13">
+      <a href="https://www.hubspot.com/products/marketing/analytics" data-order="13" data-linkorder="13">Marketing Analytics</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="14">
+      <a href="https://www.hubspot.com/products/marketing/landing-pages" data-order="14" data-linkorder="14">Free Landing Page Builder</a>
+    </li>
+    
+    </ul>
+</section>
+
+      </div>
+      <div class="hsg-footer__nav-right" role="navigation">
+        <div class="hsg-footer__nav-full" role="navigation">
+          <section class="hsg-footer__nav-column ">
+  <input type="checkbox" id="hsg-footer-column-1" name="hsg-footer-column-1">
+  <label for="hsg-footer-column-1">Free Tools</label>
+  <ul>
+    <li class="hsg-footer__nav-item" data-order="0">
+      <a href="https://website.grader.com/?__hstc=20629287.e4e046660731447bf82affe18aa75831.1482962870986.1487962165415.1487964870240.141&amp;__hssc=20629287.1.1487964870240&amp;__hsfp=3218882972" data-order="0" data-linkorder="0">Website Grader</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="1">
+      <a href="https://www.hubspot.com/make-my-persona" data-order="1" data-linkorder="1">Make My Persona</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="2">
+      <a href="https://www.hubspot.com/email-signature-generator" data-order="2" data-linkorder="2">Email Signature Generator</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="3">
+      <a href="https://www.hubspot.com/blog-topic-generator" data-order="3" data-linkorder="3">Blog Ideas Generator</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="4">
+      <a href="https://www.hubspot.com/invoice-template-generator" data-order="4" data-linkorder="4">Invoice Template Generator</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="5">
+      <a href="https://www.hubspot.com/marketing-plan-template-generator" data-order="5" data-linkorder="5">Marketing Plan Generator</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="6">
+      <a href="https://www.hubspot.com/business-templates" data-order="6" data-linkorder="6">Free Business Templates</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="7">
+      <a href="https://www.hubspot.com/industry-data" data-order="7" data-linkorder="7">Industry Benchmark Data</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="8">
+      <a href="https://www.hubspot.com/comparisons" data-order="8" data-linkorder="8">Software Comparisons Library</a>
+    </li>
+    
+    </ul>
+</section>
+
+        </div>
+        <div class="hsg-footer__nav-full" role="navigation">
+          <section class="hsg-footer__nav-column ">
+  <input type="checkbox" id="hsg-footer-column-2" name="hsg-footer-column-2">
+  <label for="hsg-footer-column-2">Company</label>
+  <ul>
+    <li class="hsg-footer__nav-item" data-order="0">
+      <a href="https://www.hubspot.com/our-story" data-order="0" data-linkorder="0">About Us</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="1">
+      <a href="https://www.hubspot.com/careers" data-order="1" data-linkorder="1">Careers</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="2">
+      <a href="https://www.hubspot.com/company/management" data-order="2" data-linkorder="2">Management Team</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="3">
+      <a href="https://www.hubspot.com/company/board-of-directors" data-order="3" data-linkorder="3">Board of Directors</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="4">
+      <a href="https://ir.hubspot.com/?_ga=2.262843276.12874469.1592422655-430007000.1592422655" data-order="4" data-linkorder="4">Investor Relations</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="5">
+      <a href="https://blog.hubspot.com" data-order="5" data-linkorder="5">Blog</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="6">
+      <a href="https://www.hubspot.com/company/contact" data-order="6" data-linkorder="6">Contact Us</a>
+    </li>
+    
+    </ul>
+</section>
+
+        </div>
+        <div class="hsg-footer__nav-split" role="navigation">
+          <section class="hsg-footer__nav-column ">
+  <input type="checkbox" id="hsg-footer-column-3" name="hsg-footer-column-3">
+  <label for="hsg-footer-column-3">Customers</label>
+  <ul>
+    <li class="hsg-footer__nav-item" data-order="0">
+      <a href="https://help.hubspot.com/" data-order="0" data-linkorder="0">Customer Support</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="1">
+      <a href="https://academy.hubspot.com/hubspot-user-groups" data-order="1" data-linkorder="1">Join a Local User Group</a>
+    </li>
+    
+    </ul>
+</section>
+
+          <section class="hsg-footer__nav-column ">
+  <input type="checkbox" id="hsg-footer-column-4" name="hsg-footer-column-4">
+  <label for="hsg-footer-column-4">Partners</label>
+  <ul>
+    <li class="hsg-footer__nav-item" data-order="0">
+      <a href="https://www.hubspot.com/partners" data-order="0" data-linkorder="0">All Partner Programs</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="1">
+      <a href="https://www.hubspot.com/partners/solutions" data-order="1" data-linkorder="1">Solutions Partner Program</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="2">
+      <a href="https://www.hubspot.com/partners/app" data-order="2" data-linkorder="2">App Partner Program</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="3">
+      <a href="https://www.hubspot.com/startups/partners" data-order="3" data-linkorder="3">HubSpot for Startups</a>
+    </li>
+    
+    <li class="hsg-footer__nav-item" data-order="4">
+      <a href="https://www.hubspot.com/partners/affiliates" data-order="4" data-linkorder="4">Affiliate Program</a>
+    </li>
+    
+    </ul>
+</section>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <section class="hsg-footer__contact-links">
+    <ul class="hsg-footer__social">
+      <li>
+        <a href="https://www.facebook.com/hubspot" target="_blank" class="hstc_facebook">
+          <i class="hsg-icon hsg-icon-facebook"></i><span class="hidden-social">Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/hubspot" target="_blank" class="hstc_instagram">
+          <i class="hsg-icon hsg-icon-instagram"></i><span class="hidden-social">Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://youtube.com/user/HubSpot" target="_blank" class="hstc_youtube">
+          <i class="hsg-icon hsg-icon-youtube"></i><span class="hidden-social">Youtube</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/HubSpot" target="_blank" class="hstc_twitter">
+          <i class="hsg-icon hsg-icon-twitter"></i><span class="hidden-social">Twitter</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/hubspot" target="_blank" class="hstc_linkedin">
+          <i class="hsg-icon hsg-icon-linkedin"></i><span class="hidden-social">Linkedin</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/@HubSpot" target="_blank" class="hstc_medium">
+          <i class="hsg-icon hsg-icon-medium"></i><span class="hidden-social">Medium</span>
+        </a>
+      </li>
+      </ul>
+  </section>
+  
+  <section class="hsg-footer__bottom">
+    <div class="hsg-footer__apps">
+      
+      
+      <a class="hsg-footer__app" href="https://apps.apple.com/us/app/hubspot/id1107711722" aria-label="Link to App Store">
+        <img class="hsg-deferred homepage-mobile-footer-apple" data-src="https://cdn2.hubspot.net/hubfs/53/app%20store%20high%20res.png" alt="App store">
+      </a>
+      <a class="hsg-footer__app" href="https://play.google.com/store/apps/details?id=com.hubspot.android&amp;hl=en_US" aria-label="Link to Google Play">
+        <img class="hsg-deferred homepage-mobile-footer-google" data-src="https://cdn2.hubspot.net/hubfs/53/google%20play%20high%20res.png" alt="Google Play">
+      </a>
+      
+    </div>
+    <div class="hsg-footer__logo" role="img">
+      <a href="//www.hubspot.com" aria-label="HubSpot Home Logo">
+        <img class="hsg-deferred" data-src="https://www.hubspot.com/hubfs/WBZ-1165%20Global%20Nav%20Redesign/Wordmark-White.svg" alt="HubSpot Logo"></a>
+      <p>Copyright © 2020 HubSpot, Inc.</p>
+      </div>
+    <div class="hsg-footer__copyright">
+      <ul>
+        
+        <li><a href="https://legal.hubspot.com/legal-stuff">Legal Stuff</a></li>
+        
+        <li><a href="https://legal.hubspot.com/privacy-policy">Privacy Policy</a></li>
+        </ul>
+    </div>
+  </section>
+  </footer></div>
+
+
+
+
+</div><!--end widget-span -->
+
+</div><!--end row-->
+</div><!--end row-wrapper -->
+</div>
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+            </div><!--end row-wrapper -->
+            <div class="row-fluid-wrapper row-depth-1 row-number-2">
+                <div class="row-fluid ">
+                    <div class="span12 widget-span widget-type-raw_html " style="" data-widget-type="raw_html" data-x="0" data-w="12">
+                        <div class="cell-wrapper layout-widget-wrapper">
+													  
+                            <span id="hs_cos_wrapper_module_1497301113455132" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html"><!-- prev 4208 -->
+<script src="https://blog.hubspot.com/wt-assets/static-files/2811/blog-rebuild/scripts.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script></span>
+                        </div><!--end layout-widget-wrapper -->
+                    </div><!--end widget-span -->
+                </div><!--end row-->
+            </div><!--end row-wrapper -->
+        </div><!--end footer -->
+    <!--end footer wrapper -->
+    
+<script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+(function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/_hcms/perf', true /*async*/);
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.onreadystatechange = function () {
+                // do nothing.
+            };
+            var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            function populateNetworkInfo(name, connection, info) {
+                if (name in connection) {
+                    info[name] = connection[name];
+                }
+            }
+            var networkInfo = {};
+            if (connection) {
+                ['type', 'effectiveType', 'downlink', 'rtt'].forEach(function(name) {
+                    populateNetworkInfo(name, connection, networkInfo);
+                });
+            }
+            var perfData = {
+                url: location.href,
+                portal: 53,
+                content: 32807263294,
+                group: -1,
+                connection: networkInfo,
+                timing: performance.timing
+            };
+            xhr.send(JSON.stringify(perfData));
+        }, 3000);  // Execute this 3 seconds after onload.
+    });
+})();
+</script>
+
+<script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en'; }
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.37/bundles/project.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+    <!--[if lte IE 8]>
+    <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+
+<script src="/_hcms/forms/v2.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+    <script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+        var options = {
+            portalId: '53',
+            formId: 'f3507b84-ad3e-4df5-97a5-72550ac2860c',
+            formInstanceId: '1175',
+            pageId: '32807263294',
+            region: 'na1',
+            
+            
+            
+            
+            pageName: "REST APIs: How They Work and What You Need to Know",
+            
+            
+            
+            
+            
+            
+            css: '',
+            target: '#hs_form_target_download_for_later',
+            
+            
+            
+            
+            
+            contentType: "blog-post",
+            
+            
+            formsBaseUrl: '/_hcms/forms/',
+            
+            
+            formData: {
+                cssClass: 'hs-form stacked hs-custom-form'
+            }
+        };
+
+        options.getExtraMetaDataBeforeSubmit = function() {
+            var metadata = {};
+            
+
+            if (hbspt.targetedContentMetadata) {
+                var count = hbspt.targetedContentMetadata.length;
+                var targetedContentData = [];
+                for (var i = 0; i < count; i++) {
+                    var tc = hbspt.targetedContentMetadata[i];
+                     if ( tc.length !== 3) {
+                        continue;
+                     }
+                     targetedContentData.push({
+                        definitionId: tc[0],
+                        criterionId: tc[1],
+                        smartTypeId: tc[2]
+                     });
+                }
+                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
+            }
+
+            return metadata;
+        };
+
+        hbspt.forms.create(options);
+    </script>
+
+<script src="https://blog.hubspot.com/wt-assets/static-files/2811/core-nav/scripts.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "blog-post"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/blog.hubspot.com\/website\/what-is-rest-api"]);
+_hsq.push(["setPageId", "32807263294"]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": 32807263294,
+    "legacyPageId": "32807263294",
+    "contentFolderId": null,
+    "contentGroupId": 9901938527,
+    "abTestId": null,
+    "languageVariantId": 32807263294,
+    "languageCode": "en",
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/53.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">
+var hsVars = {
+    ticks: 1625417237990,
+    page_id: 32807263294,
+
+    content_group_id: 9901938527,
+    portal_id: 53,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "blog-post",
+    analytics_page_id: "32807263294",
+    category_id: 3,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.103/js/index.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+
+
+<!-- HREFLANG MACRO -->
+
+
+  
+
+
+<!-- begin Convert -->
+<script type="text/javascript" src="//cdn-3.convertexperiments.com/js/10031559-1003891.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+<!-- end Convert -->
+
+    
+
+
+
+
+
+
+
+
+
+<script src="//blog.hubspot.com/wt-assets/static-files/2611/messaging-functions/scripts.js" type="text/javascript" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+
+<script type="text/javascript" src="https://static.hsappstatic.net/affiliates-landing-embed/ex/referral.js" nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz"></script>
+
+
+<div id="fb-root"></div>
+ <script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&status=0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ <script nonce="MjgxODgxMDE4OCwyMTY0NTQ3NDUz">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ 
+
+
+    
+</body></html>
